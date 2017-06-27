@@ -11,7 +11,9 @@ public class BookClient {
     private AsyncHttpClient client;
 
     public BookClient() {
+
         this.client = new AsyncHttpClient();
+//        client.setTimeout(20*1000);
     }
 
     private String getApiUrl(String relativeUrl) {
