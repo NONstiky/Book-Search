@@ -28,6 +28,9 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
 
 public class BookListActivity extends AppCompatActivity {
     private RecyclerView rvBooks;
@@ -52,9 +55,17 @@ public class BookListActivity extends AppCompatActivity {
         // Set layout manager to position the items
         rvBooks.setLayoutManager(new LinearLayoutManager(this));
 
+
         // Fetch the data remotely
         // fetchBooks("Oscar Wilde");
+
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
     }
+
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
     // Converts them into an array of book objects and adds them to the adapter
@@ -109,8 +120,8 @@ public class BookListActivity extends AppCompatActivity {
         // Customize searchview text and hint colors
         int searchEditId = android.support.v7.appcompat.R.id.search_src_text;
         final EditText et = (EditText) searchView.findViewById(searchEditId);
-        et.setTextColor(Color.WHITE);
-        et.setHintTextColor(Color.WHITE);
+        et.setTextColor(Color.BLACK);
+        et.setHintTextColor(Color.BLACK);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
